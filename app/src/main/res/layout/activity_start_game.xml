@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="8"
+        android:rowCount="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border"
+        android:alpha="0.3">
+
+        <TextView
+            android:id="@+id/rc00"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc00" />
+
+        <TextView
+            android:id="@+id/rc01"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc01" />
+
+        <TextView
+            android:id="@+id/rc02"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc02"/>
+
+        <TextView
+            android:id="@+id/rc03"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc03"/>
+
+        <TextView
+            android:id="@+id/rc04"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc04"/>
+
+        <TextView
+            android:id="@+id/rc05"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc05"/>
+
+        <TextView
+            android:id="@+id/rc06"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc06"/>
+
+        <TextView
+            android:id="@+id/rc07"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc07"/>
+
+        <TextView
+            android:id="@+id/rc10"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="1"
+            android:background="@color/rc10"/>
+
+        <TextView
+            android:id="@+id/rc11"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc11"/>
+
+        <TextView
+            android:id="@+id/rc12"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc12"/>
+
+        <TextView
+            android:id="@+id/rc13"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc13"/>
+
+        <TextView
+            android:id="@+id/rc14"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc14"/>
+
+        <TextView
+            android:id="@+id/rc15"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc15"/>
+
+        <TextView
+            android:id="@+id/rc16"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc16"/>
+
+        <TextView
+            android:id="@+id/rc17"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc17"/>
+
+        <TextView
+            android:id="@+id/rc20"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="2"
+            android:background="@color/rc20"/>
+
+        <TextView
+            android:id="@+id/rc21"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc21"/>
+
+        <TextView
+            android:id="@+id/rc22"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc22"/>
+
+        <TextView
+            android:id="@+id/rc23"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc23"/>
+
+        <TextView
+            android:id="@+id/rc24"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc24"/>
+
+        <TextView
+            android:id="@+id/rc25"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc25"/>
+
+        <TextView
+            android:id="@+id/rc26"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="3"
+            android:background="@color/rc26"/>
+
+        <TextView
+            android:id="@+id/rc27"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc27"/>
+
+
+        <TextView
+            android:id="@+id/rc30"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc30"/>
+        <TextView
+            android:id="@+id/rc31"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc31"/>
+
+        <TextView
+            android:id="@+id/rc32"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc32"/>
+
+        <TextView
+            android:id="@+id/rc33"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc33"/>
+
+        <TextView
+            android:id="@+id/rc34"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc34"/>
+
+        <TextView
+            android:id="@+id/rc35"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc35"/>
+
+        <TextView
+            android:id="@+id/rc36"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc36"/>
+
+        <TextView
+            android:id="@+id/rc37"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc37"/>
+
+        <TextView
+            android:id="@+id/rc40"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="4"
+            android:background="@color/rc40"/>
+
+        <TextView
+            android:id="@+id/rc41"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc41"/>
+
+        <TextView
+            android:id="@+id/rc42"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc42"/>
+
+        <TextView
+            android:id="@+id/rc43"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc43"/>
+
+        <TextView
+            android:id="@+id/rc44"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc44"/>
+
+        <TextView
+            android:id="@+id/rc45"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc45"/>
+
+        <TextView
+            android:id="@+id/rc46"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc46"/>
+
+        <TextView
+            android:id="@+id/rc47"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc47"/>
+
+        <TextView
+            android:id="@+id/rc50"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="5"
+            android:background="@color/rc50"/>
+
+        <TextView
+            android:id="@+id/rc51"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc51"/>
+
+        <TextView
+            android:id="@+id/rc52"
+            android:layout_width="49dp"
+            android:layout_height="49dp" />
+
+        <TextView
+            android:id="@+id/rc53"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc53"/>
+
+        <TextView
+            android:id="@+id/rc54"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc54"/>
+
+        <TextView
+            android:id="@+id/rc55"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc55"/>
+
+        <TextView
+            android:id="@+id/rc56"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc56"/>
+
+        <TextView
+            android:id="@+id/rc57"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc57"/>
+
+        <TextView
+            android:id="@+id/rc60"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="6"
+            android:background="@color/rc60"/>
+
+        <TextView
+            android:id="@+id/rc61"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc61"/>
+
+        <TextView
+            android:id="@+id/rc62"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc62"/>
+
+        <TextView
+            android:id="@+id/rc63"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc63"/>
+
+        <TextView
+            android:id="@+id/rc64"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc64"/>
+
+        <TextView
+            android:id="@+id/rc65"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc65"/>
+
+        <TextView
+            android:id="@+id/rc66"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc66"/>
+
+        <TextView
+            android:id="@+id/rc67"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc67"/>
+
+        <TextView
+            android:id="@+id/rc70"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="7"
+            android:background="@color/rc70"/>
+
+        <TextView
+            android:id="@+id/rc71"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc71"/>
+
+        <TextView
+            android:id="@+id/rc72"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc72"/>
+
+        <TextView
+            android:id="@+id/rc73"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc73"/>
+
+        <TextView
+            android:id="@+id/rc74"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc74"/>
+
+        <TextView
+            android:id="@+id/rc75"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc75"/>
+
+        <TextView
+            android:id="@+id/rc76"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc76"/>
+
+        <TextView
+            android:id="@+id/rc77"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@color/rc77"/>
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/gridlayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="8"
+        android:rowCount="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/r00"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            app:layout_column="0"
+            app:layout_row="0"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false" />
+
+        <TextView
+            android:id="@+id/r01"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r02"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r03"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r04"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r05"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r06"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r07"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r10"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="1"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r11"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r12"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r13"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r14"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r15"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r16"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r17"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r20"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="2"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r21"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r22"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r23"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r24"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r25"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r26"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="3"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r27"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+
+        <TextView
+            android:id="@+id/r30"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+        <TextView
+            android:id="@+id/r31"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r32"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r33"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r34"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r35"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r36"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r37"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r40"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="4"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r41"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r42"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r43"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r44"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r45"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r46"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r47"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r50"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="5"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r51"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r52"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r53"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r54"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r55"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r56"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r57"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r60"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="6"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r61"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r62"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r63"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r64"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/r65"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r66"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r67"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r70"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            app:layout_column="0"
+            app:layout_row="7"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r71"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="8dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r72"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r73"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r74"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r75"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r76"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+
+        <TextView
+            android:id="@+id/r77"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:elevation="1dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:longClickable="false"/>
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

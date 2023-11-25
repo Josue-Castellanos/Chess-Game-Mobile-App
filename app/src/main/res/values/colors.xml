@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="validSquareColor">#8dff0004</color>
+    <color name="rc00">#FFFFFF</color>
+    <color name="rc02">#FFFFFF</color>
+    <color name="rc04">#FFFFFF</color>
+    <color name="rc06">#FFFFFF</color>
+    <color name="rc11">#FFFFFF</color>
+    <color name="rc13">#FFFFFF</color>
+    <color name="rc15">#FFFFFF</color>
+    <color name="rc17">#FFFFFF</color>
+    <color name="rc20">#FFFFFF</color>
+    <color name="rc22">#FFFFFF</color>
+    <color name="rc24">#FFFFFF</color>
+    <color name="rc26">#FFFFFF</color>
+    <color name="rc31">#FFFFFF</color>
+    <color name="rc33">#FFFFFF</color>
+    <color name="rc35">#FFFFFF</color>
+    <color name="rc37">#FFFFFF</color>
+    <color name="rc40">#FFFFFF</color>
+    <color name="rc42">#FFFFFF</color>
+    <color name="rc44">#FFFFFF</color>
+    <color name="rc46">#FFFFFF</color>
+    <color name="rc51">#FFFFFF</color>
+    <color name="rc53">#FFFFFF</color>
+    <color name="rc55">#FFFFFF</color>
+    <color name="rc57">#FFFFFF</color>
+    <color name="rc60">#FFFFFF</color>
+    <color name="rc62">#FFFFFF</color>
+    <color name="rc64">#FFFFFF</color>
+    <color name="rc66">#FFFFFF</color>
+    <color name="rc71">#FFFFFF</color>
+    <color name="rc73">#FFFFFF</color>
+    <color name="rc75">#FFFFFF</color>
+    <color name="rc77">#FFFFFF</color>
+
+
+    <color name="rc01">#00000000</color>
+    <color name="rc03">#00000000</color>
+    <color name="rc05">#00000000</color>
+    <color name="rc07">#00000000</color>
+    <color name="rc10">#00000000</color>
+    <color name="rc12">#00000000</color>
+    <color name="rc14">#00000000</color>
+    <color name="rc16">#00000000</color>
+    <color name="rc21">#00000000</color>
+    <color name="rc23">#00000000</color>
+    <color name="rc25">#00000000</color>
+    <color name="rc27">#00000000</color>
+    <color name="rc30">#00000000</color>
+    <color name="rc32">#00000000</color>
+    <color name="rc34">#00000000</color>
+    <color name="rc36">#00000000</color>
+    <color name="rc41">#00000000</color>
+    <color name="rc43">#00000000</color>
+    <color name="rc45">#00000000</color>
+    <color name="rc47">#00000000</color>
+    <color name="rc50">#00000000</color>
+    <color name="rc54">#00000000</color>
+    <color name="rc56">#00000000</color>
+    <color name="rc61">#00000000</color>
+    <color name="rc63">#00000000</color>
+    <color name="rc65">#00000000</color>
+    <color name="rc67">#00000000</color>
+    <color name="rc70">#00000000</color>
+    <color name="rc72">#00000000</color>
+    <color name="rc74">#00000000</color>
+    <color name="rc76">#00000000</color>
+
+
+</resources>
