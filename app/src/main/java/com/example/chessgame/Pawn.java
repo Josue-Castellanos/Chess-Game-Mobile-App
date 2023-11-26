@@ -23,14 +23,16 @@ public class Pawn extends Piece{
             // If pawns first move then its valid to take 2 squares forward
             if (isFirstMove) {
                 for (int i = 1; i <= 2; i++) {
-                    vp = new Positions(row - i,col);
+                    int newRow = row - i;
+                    vp = new Positions(newRow,col);
                     validPositions.add(vp);
                     this.isFirstMove = false;
                 }
             }
             // Else only take 1 square forward
             else {
-                vp = new Positions(row - 1, col);
+                int newRow = row - 1;
+                vp = new Positions(newRow, col);
                 validPositions.add(vp);
             }
         }
@@ -38,14 +40,16 @@ public class Pawn extends Piece{
             // If pawns first move then its valid to take 2 squares forward
             if (isFirstMove) {
                 for (int i = 1; i <= 2; i++) {
-                    vp = new Positions(row + i, col);
+                    int newRow = row + i;
+                    vp = new Positions(newRow, col);
                     validPositions.add(vp);
                     this.isFirstMove = false;
                 }
             }
             // Else only take 1 square forward
             else {
-                vp = new Positions(row + 1, col);
+                int newRow = row + 1;
+                vp = new Positions(newRow, col);
                 validPositions.add(vp);
             }
         }
