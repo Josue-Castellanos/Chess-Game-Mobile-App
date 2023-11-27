@@ -1,12 +1,9 @@
 package com.example.chessgame;
 
-import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -29,6 +26,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
     ArrayList<Positions> listOfPositions = new ArrayList<>();
     boolean isFirstPlayersTurn;
     boolean isFirstPosition;
+    boolean isKingChecked;
 
 
     @Override
@@ -116,7 +114,6 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         int viewId = v.getId();
-
         // Convert the view ID to a string
         String viewIdString = getResources().getResourceEntryName(viewId);
         // Exclude the first character, the first character is a letter
@@ -127,7 +124,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
         int row = numericPart / 10; // Second number is Row
         int col = numericPart % 10;  // First number is Column
 
-        // create position to check
+        // Create a position to check
         checkPosition = new Positions(row, col);
 
         // If the first position chosen is empty, ignore the click
@@ -140,7 +137,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
         if(isFirstPlayersTurn && isFirstPosition && Board[checkPosition.getRow()][checkPosition.getCol()].getPiece().isWhite() ) {
             // save firstPosition, then save all valid positions for piece to move
             listOfPositions.add(checkPosition);
-            listOfPositions.addAll(Board[checkPosition.getRow()][checkPosition.getCol()].getPiece().ValidPositions(checkPosition));
+            listOfPositions.addAll(Board[checkPosition.getRow()][checkPosition.getCol()].getPiece().ValidPositions(checkPosition, Board));
             // Show the valid squares on the board
             for (Positions position : listOfPositions) {
                 int validRow = position.getRow();
@@ -161,13 +158,23 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
 
                     DisplayBoardValidSquares[validRow][validCol].setBackgroundColor(getResources().getColor(getResources().getIdentifier("rc" + validRow + validCol, "color", getPackageName()), getTheme()));
                 }
-                // get saved firstPosition from list
-                Positions firstPosition = listOfPositions.get(0);
 
-                //listOfPositions.remove(0);
+                Positions firstPosition = listOfPositions.get(0);
                 Positions lastPosition = new Positions(row, col);
-                movePieces(firstPosition, lastPosition);
-                listOfPositions.clear();
+                if (firstPosition.getRow() == lastPosition.getRow() && firstPosition.getCol() == lastPosition.getCol()) {
+                    if(Board[checkPosition.getRow()][checkPosition.getCol()].getPiece() instanceof Pawn) {
+                        ((Pawn) Board[checkPosition.getRow()][checkPosition.getCol()].getPiece()).isFirstMove = true;
+                    }
+                    isFirstPosition = true;
+                    isFirstPlayersTurn = true;
+                    listOfPositions.clear();
+                    return;
+                }
+                else {
+                    movePieces(firstPosition, lastPosition);
+                    listOfPositions.clear();
+                    isKingChecked();
+                }
             }
             else {
                 return;
@@ -178,7 +185,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
         if (!isFirstPlayersTurn && isFirstPosition && !Board[checkPosition.getRow()][checkPosition.getCol()].getPiece().isWhite()){
             // save firstPosition, then save all valid positions for piece to move
             listOfPositions.add(checkPosition);
-            listOfPositions.addAll(Board[checkPosition.getRow()][checkPosition.getCol()].getPiece().ValidPositions(checkPosition));
+            listOfPositions.addAll(Board[checkPosition.getRow()][checkPosition.getCol()].getPiece().ValidPositions(checkPosition, Board));
             // Show the valid squares on the board
             for (Positions position : listOfPositions) {
                 int validRow = position.getRow();
@@ -202,8 +209,20 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
                 // get saved firstPosition from list
                 Positions firstPosition = listOfPositions.get(0);
                 Positions lastPosition = new Positions(row, col);
-                movePieces(firstPosition, lastPosition);
-                listOfPositions.clear();
+                if (firstPosition.getRow() == lastPosition.getRow() && firstPosition.getCol() == lastPosition.getCol()) {
+                    if(Board[checkPosition.getRow()][checkPosition.getCol()].getPiece() instanceof Pawn) {
+                        ((Pawn) Board[checkPosition.getRow()][checkPosition.getCol()].getPiece()).isFirstMove = true;
+                    }
+                    isFirstPosition = true;
+                    isFirstPlayersTurn = false;
+                    listOfPositions.clear();
+                    return;
+                }
+                else {
+                    movePieces(firstPosition, lastPosition);
+                    listOfPositions.clear();
+                    isKingChecked();
+                }
             }
             else {
                 return;
@@ -229,6 +248,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
                 DisplayBoard[firstPosition.getRow()][firstPosition.getCol()].setBackgroundResource(0);
                 DisplayBoard[lastPosition.getRow()][lastPosition.getCol()].setBackgroundResource(Board[lastPosition.getRow()][lastPosition.getCol()].getPiece().getImageResourceId());
             }
+
             isFirstPlayersTurn = false;
         }
         // Second Players Turn - Black Pieces
@@ -251,6 +271,50 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
             isFirstPlayersTurn = true;
         }
         isFirstPosition = true;
+    }
+
+    // Indicate to players that their King piece is checked by an opposing players piece.
+    private void isKingChecked() {
+        // Iterate through the board
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (Board[i][j].getPiece() != null && Board[i][j].getPiece() instanceof King) {
+                    Positions kingCoordinates = new Positions(i, j);
+                    // Get the allowed moves for the king
+                    ArrayList<Positions> kingMoves = Board[i][j].getPiece().ValidPositions(kingCoordinates, Board);
+
+                    // Iterate through the king's allowed moves
+                    for (Positions move : kingMoves) {
+                        // Check if any opponent's pieces can attack the king
+                        for (int x = 0; x < 8; x++) {
+                            for (int y = 0; y < 8; y++) {
+                                if (Board[x][y].getPiece() != null && Board[x][y].getPiece().isWhite() != Board[i][j].getPiece().isWhite()) {
+                                    ArrayList<Positions> opponentMoves = Board[x][y].getPiece().ValidPositions(new Positions(x, y), Board);
+                                    if (opponentMoves.contains(move)) {
+                                        // Highlight the king's position in red
+                                        if ((kingCoordinates.getRow() + kingCoordinates.getCol()) % 2 == 0) {
+                                            DisplayBoardValidSquares[kingCoordinates.getRow()][kingCoordinates.getCol()].setBackgroundResource(R.color.kingCheckedColor);
+                                        } else {
+                                            DisplayBoardValidSquares[kingCoordinates.getRow()][kingCoordinates.getCol()].setBackgroundResource(R.color.kingCheckedColor);
+                                        }
+
+                                        // The king is in check, highlight the attacking square
+                                        if ((move.getRow() + move.getCol()) % 2 == 0) {
+                                            DisplayBoardValidSquares[move.getRow()][move.getCol()].setBackgroundResource(R.color.attackingSquareColor);
+                                        } else {
+                                            DisplayBoardValidSquares[move.getRow()][move.getCol()].setBackgroundResource(R.color.attackingSquareColor);
+                                        }
+
+                                        // You can also set a flag or take any other action to indicate that the king is in check
+                                        isKingChecked = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     @Override
     protected void onResume() {
