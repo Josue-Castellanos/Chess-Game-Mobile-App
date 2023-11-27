@@ -292,7 +292,8 @@
         <TextView
             android:id="@+id/rc52"
             android:layout_width="49dp"
-            android:layout_height="49dp" />
+            android:layout_height="49dp"
+            android:background="@color/rc52"/>
 
         <TextView
             android:id="@+id/rc53"
@@ -925,8 +926,7 @@
             android:elevation="1dp"
             android:clickable="true"
             android:onClick="onClick"
-            android:longClickable="false"
-            android:focusable="true" />
+            android:longClickable="false" />
 
         <TextView
             android:id="@+id/r65"

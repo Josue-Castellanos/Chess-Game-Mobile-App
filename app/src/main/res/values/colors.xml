@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="validSquareColor">#8dff0004</color>
+    <color name="kingCheckedColor">#8DF7FF00</color>
+    <color name="attackingSquareColor">#795e45e6</color>
     <color name="rc00">#FFFFFF</color>
     <color name="rc02">#FFFFFF</color>
     <color name="rc04">#FFFFFF</color>
@@ -36,7 +38,6 @@
     <color name="rc75">#FFFFFF</color>
     <color name="rc77">#FFFFFF</color>
 
-
     <color name="rc01">#00000000</color>
     <color name="rc03">#00000000</color>
     <color name="rc05">#00000000</color>
@@ -58,6 +59,7 @@
     <color name="rc45">#00000000</color>
     <color name="rc47">#00000000</color>
     <color name="rc50">#00000000</color>
+    <color name="rc52">#00000000</color>
     <color name="rc54">#00000000</color>
     <color name="rc56">#00000000</color>
     <color name="rc61">#00000000</color>
