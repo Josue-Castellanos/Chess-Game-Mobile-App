@@ -22,7 +22,7 @@ public abstract class Piece {
         return imageResourceId;
     }
 
-    public ArrayList<Positions> ValidPositions(Positions position) {
+    public ArrayList<Positions> ValidPositions(Positions position, Square[][] Board) {
         ArrayList<Positions> validPositions = new ArrayList<>();
         Positions validPosition;
         for (int i = 0; i < 8; i++) {
