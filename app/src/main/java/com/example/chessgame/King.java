@@ -7,12 +7,11 @@ public class King extends Piece{
         super(isWhite, imageResourceId);
     }
 
-    public ArrayList<Positions> ValidPositions(Positions position) {
+    public ArrayList<Positions> ValidPositions(Positions position, Square[][] Board) {
         int col = position.getCol();
         int row = position.getRow();
         ArrayList<Positions> validPositions = new ArrayList<>();
         Positions vp;
-
 
         // King moves
         int[] moveRows = {-1, -1, -1, 0, 0, 1, 1, 1};
@@ -21,13 +20,16 @@ public class King extends Piece{
         for (int i = 0; i < moveRows.length; i++) {
             int newRow = row + moveRows[i];
             int newCol = col + moveCols[i];
-
-            if (row >= 0 && row < 8 && col >= 0 && col < 8) {
+            // Check if a piece is on front squares
+            if (Board[newRow][newCol].getPiece() != null) {
+                break;
+            }
+            // save valid positions
+            else if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
                 vp = new Positions(newRow, newCol);
                 validPositions.add(vp);
             }
         }
-
         return validPositions;
     }
 }

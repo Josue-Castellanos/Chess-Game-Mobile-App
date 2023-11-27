@@ -8,7 +8,7 @@ public class Knight extends Piece{
     }
 
     // Knight moves
-    public ArrayList<Positions> ValidPositions(Positions position) {
+    public ArrayList<Positions> ValidPositions(Positions position, Square[][] Board) {
         int col = position.getCol();
         int row = position.getRow();
         ArrayList<Positions> validPositions = new ArrayList<>();
@@ -21,7 +21,11 @@ public class Knight extends Piece{
             int newRow = row + moveRows[i];
             int newCol = col + moveCols[i];
 
-            if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+            // Check if a piece is on front squares
+            if (Board[newRow][newCol].getPiece() != null) {
+                break;
+            }
+            else if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
                 vp = new Positions(newRow, newCol);
                 validPositions.add(vp);
             }
