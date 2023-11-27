@@ -8,7 +8,9 @@ public class Rook extends Piece{
     }
 
     @Override
-    public ArrayList<Positions> ValidPositions(Positions position) {
+    public ArrayList<Positions> ValidPositions(Positions position, Square[][] Board) {
+        int newCol;
+        int newRow;
         int col = position.getCol();
         int row = position.getRow();
         ArrayList<Positions> validPositions = new ArrayList<>();
@@ -19,24 +21,57 @@ public class Rook extends Piece{
 
         // Checking valid squares to the right of the piece
         for (int i = col; i < 8; i++) {
-            int newCol = i;
-            vp = new Positions(row, i);
-            validPositions.add(vp);
+            newCol = i;
+            // Check if a piece is on front squares
+            if (Board[row][newCol].getPiece() != null) {
+                break;
+            }
+            // save valid positions
+            else if (row >= 0 && row < 8 && newCol >= 0 && newCol < 8) {
+                vp = new Positions(row, newCol);
+                validPositions.add(vp);
+            }
         }
         // Checking valid squares to the left of the piece.
         for (int i = col; i > 0; i--) {
-            vp = new Positions(row, i);
-            validPositions.add(vp);
+            newCol = i;
+            // Check if a piece is on front squares
+            if (Board[row][newCol].getPiece() != null) {
+                break;
+            }
+            // save valid positions
+            else if (row >= 0 && row < 8 && newCol >= 0 && newCol < 8) {
+                vp = new Positions(row, newCol);
+                validPositions.add(vp);
+            }
         }
         // Checking valid squares going up
         for (int i = row; i < 8; i++) {
-            vp = new Positions(i, col);
+            newRow = i;
+            // Check if a piece is on front squares
+            if (Board[newRow][col].getPiece() != null) {
+                break;
+            }
+            // save valid positions
+            else if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
+                vp = new Positions(newRow, col);
+                validPositions.add(vp);
+            }
+            vp = new Positions(newRow, col);
             validPositions.add(vp);
         }
         // Checking valid squares going down
         for (int i = row; i >= 0; i--) {
-            vp = new Positions(i, col);
-            validPositions.add(vp);
+            newRow = i;
+            // Check if a piece is on front squares
+            if (Board[newRow][col].getPiece() != null) {
+                break;
+            }
+            // save valid positions
+            else if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
+                vp = new Positions(newRow, col);
+                validPositions.add(vp);
+            }
         }
 
         return validPositions;
