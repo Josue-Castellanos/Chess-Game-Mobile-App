@@ -20,14 +20,21 @@ public class King extends Piece{
         for (int i = 0; i < moveRows.length; i++) {
             int newRow = row + moveRows[i];
             int newCol = col + moveCols[i];
-            // Check if a piece is on front squares
-            if (Board[newRow][newCol].getPiece() != null) {
-                break;
-            }
+
             // save valid positions
-            else if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
-                vp = new Positions(newRow, newCol);
-                validPositions.add(vp);
+            if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+                Square newSquare = Board[newRow][newCol];
+                if (newSquare.isEmpty()) {
+                    vp = new Positions(newRow, newCol);
+                    validPositions.add(vp);
+                } else if (newSquare.getPiece().isWhite() != isWhite()) {
+                    vp = new Positions(newRow, newCol);
+                    validPositions.add(vp);
+                }
+                // Break out of the loop if the square is not empty
+                if (!newSquare.isEmpty()) {
+                    break;
+                }
             }
         }
         return validPositions;

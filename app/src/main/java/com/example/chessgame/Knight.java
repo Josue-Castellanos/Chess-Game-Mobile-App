@@ -3,6 +3,7 @@ package com.example.chessgame;
 import java.util.ArrayList;
 
 public class Knight extends Piece{
+
     public Knight(boolean isWhite, int imageResourceId) {
         super(isWhite, imageResourceId);
     }
@@ -21,13 +22,13 @@ public class Knight extends Piece{
             int newRow = row + moveRows[i];
             int newCol = col + moveCols[i];
 
-            // Check if a piece is on front squares
-            if (Board[newRow][newCol].getPiece() != null) {
-                break;
-            }
-            else if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
-                vp = new Positions(newRow, newCol);
-                validPositions.add(vp);
+            if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+                Square newSquare = Board[newRow][newCol];
+                if (newSquare.isEmpty() || newSquare.getPiece().isWhite() != isWhite()) {
+                    vp = new Positions(newRow, newCol);
+                    validPositions.add(vp);
+                }
+
             }
         }
         return validPositions;

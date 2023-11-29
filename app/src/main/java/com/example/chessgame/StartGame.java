@@ -173,7 +173,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
                 else {
                     movePieces(firstPosition, lastPosition);
                     listOfPositions.clear();
-                    isKingChecked();
+                    //isKingChecked();
                 }
             }
             else {
@@ -221,7 +221,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
                 else {
                     movePieces(firstPosition, lastPosition);
                     listOfPositions.clear();
-                    isKingChecked();
+                    //isKingChecked();
                 }
             }
             else {
@@ -274,48 +274,48 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
     }
 
     // Indicate to players that their King piece is checked by an opposing players piece.
-    private void isKingChecked() {
-        // Iterate through the board
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (Board[i][j].getPiece() != null && Board[i][j].getPiece() instanceof King) {
-                    Positions kingCoordinates = new Positions(i, j);
-                    // Get the allowed moves for the king
-                    ArrayList<Positions> kingMoves = Board[i][j].getPiece().ValidPositions(kingCoordinates, Board);
-
-                    // Iterate through the king's allowed moves
-                    for (Positions move : kingMoves) {
-                        // Check if any opponent's pieces can attack the king
-                        for (int x = 0; x < 8; x++) {
-                            for (int y = 0; y < 8; y++) {
-                                if (Board[x][y].getPiece() != null && Board[x][y].getPiece().isWhite() != Board[i][j].getPiece().isWhite()) {
-                                    ArrayList<Positions> opponentMoves = Board[x][y].getPiece().ValidPositions(new Positions(x, y), Board);
-                                    if (opponentMoves.contains(move)) {
-                                        // Highlight the king's position in red
-                                        if ((kingCoordinates.getRow() + kingCoordinates.getCol()) % 2 == 0) {
-                                            DisplayBoardValidSquares[kingCoordinates.getRow()][kingCoordinates.getCol()].setBackgroundResource(R.color.kingCheckedColor);
-                                        } else {
-                                            DisplayBoardValidSquares[kingCoordinates.getRow()][kingCoordinates.getCol()].setBackgroundResource(R.color.kingCheckedColor);
-                                        }
-
-                                        // The king is in check, highlight the attacking square
-                                        if ((move.getRow() + move.getCol()) % 2 == 0) {
-                                            DisplayBoardValidSquares[move.getRow()][move.getCol()].setBackgroundResource(R.color.attackingSquareColor);
-                                        } else {
-                                            DisplayBoardValidSquares[move.getRow()][move.getCol()].setBackgroundResource(R.color.attackingSquareColor);
-                                        }
-
-                                        // You can also set a flag or take any other action to indicate that the king is in check
-                                        isKingChecked = true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+//    private void isKingChecked() {
+//        // Iterate through the board
+//        for (int i = 0; i < 8; i++) {
+//            for (int j = 0; j < 8; j++) {
+//                if (Board[i][j].getPiece() != null && Board[i][j].getPiece() instanceof King) {
+//                    Positions kingCoordinates = new Positions(i, j);
+//                    // Get the allowed moves for the king
+//                    ArrayList<Positions> kingMoves = Board[i][j].getPiece().ValidPositions(kingCoordinates, Board);
+//
+//                    // Iterate through the king's allowed moves
+//                    for (Positions move : kingMoves) {
+//                        // Check if any opponent's pieces can attack the king
+//                        for (int x = 0; x < 8; x++) {
+//                            for (int y = 0; y < 8; y++) {
+//                                if (Board[x][y].getPiece() != null && Board[x][y].getPiece().isWhite() != Board[i][j].getPiece().isWhite()) {
+//                                    ArrayList<Positions> opponentMoves = Board[x][y].getPiece().ValidPositions(new Positions(x, y), Board);
+//                                    if (opponentMoves.contains(move)) {
+//                                        // Highlight the king's position in red
+//                                        if ((kingCoordinates.getRow() + kingCoordinates.getCol()) % 2 == 0) {
+//                                            DisplayBoardValidSquares[kingCoordinates.getRow()][kingCoordinates.getCol()].setBackgroundResource(R.color.kingCheckedColor);
+//                                        } else {
+//                                            DisplayBoardValidSquares[kingCoordinates.getRow()][kingCoordinates.getCol()].setBackgroundResource(R.color.kingCheckedColor);
+//                                        }
+//
+//                                        // The king is in check, highlight the attacking square
+//                                        if ((move.getRow() + move.getCol()) % 2 == 0) {
+//                                            DisplayBoardValidSquares[move.getRow()][move.getCol()].setBackgroundResource(R.color.attackingSquareColor);
+//                                        } else {
+//                                            DisplayBoardValidSquares[move.getRow()][move.getCol()].setBackgroundResource(R.color.attackingSquareColor);
+//                                        }
+//
+//                                        // You can also set a flag or take any other action to indicate that the king is in check
+//                                        isKingChecked = true;
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     @Override
     protected void onResume() {
         View decorView = getWindow().getDecorView();

@@ -19,22 +19,23 @@ public class Pawn extends Piece{
         ArrayList<Positions> validPositions = new ArrayList<>();
         Positions vp;
 
-        // WHITE PAWN
+// WHITE PAWN
         if (isWhite()) {
-            // If pawns first move then its valid to take 2 squares forward
+            // If pawns first move then it's valid to take 2 squares forward
             if (isFirstMove) {
                 // Valid two steps forward
                 for (int i = forwardMove; i <= initialMove; i++) {
                     int newRow = row - i;
 
                     // Check if a piece is on front squares, ignore square if so
-                    if (Board[newRow][col].getPiece() != null) {
-                        break;
-                    }
-                    // save valid positions
-                    else if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
-                        vp = new Positions(newRow, col);
-                        validPositions.add(vp);
+                    if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
+                        Square square = Board[newRow][col];
+                        if (square.getPiece() == null) {
+                            vp = new Positions(newRow, col);
+                            validPositions.add(vp);
+                        } else {
+                            break;
+                        }
                     }
                 }
                 this.isFirstMove = false;
@@ -44,67 +45,84 @@ public class Pawn extends Piece{
                 // Valid 1 step forward
                 int newRow = row - forwardMove;
                 // If there is a piece in front ignore that square
-                if (Board[newRow][col].getPiece() == null) {
-                    vp = new Positions(newRow, col);
-                    validPositions.add(vp);
+                if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
+                    Square square = Board[newRow][col];
+                    if (square.getPiece() == null) {
+                        vp = new Positions(newRow, col);
+                        validPositions.add(vp);
+                    }
                 }
 
                 // Check for capturing diagonally left
                 int leftCaptureCol = col - 1;
-                if (leftCaptureCol >= 0 && Board[newRow][leftCaptureCol].getPiece() != null
-                        && !Board[newRow][leftCaptureCol].getPiece().isWhite()) {
-                    vp = new Positions(newRow, leftCaptureCol);
-                    validPositions.add(vp);
+                if (leftCaptureCol >= 0 && leftCaptureCol < 8) {
+                    Square square = Board[newRow][leftCaptureCol];
+                    if (square.getPiece() != null && !square.getPiece().isWhite()) {
+                        vp = new Positions(newRow, leftCaptureCol);
+                        validPositions.add(vp);
+                    }
                 }
 
                 // Check for capturing diagonally right
                 int rightCaptureCol = col + 1;
-                if (rightCaptureCol < 8 && Board[newRow][rightCaptureCol].getPiece() != null
-                        && !Board[newRow][rightCaptureCol].getPiece().isWhite()) {
-                    vp = new Positions(newRow, rightCaptureCol);
-                    validPositions.add(vp);
+                if (rightCaptureCol < 8 && rightCaptureCol >= 0) {
+                    Square square = Board[newRow][rightCaptureCol];
+                    if (square.getPiece() != null && !square.getPiece().isWhite()) {
+                        vp = new Positions(newRow, rightCaptureCol);
+                        validPositions.add(vp);
+                    }
                 }
             }
         }
         // BLACK PAWN
         else {
-            // If pawns first move then its valid to take 2 squares forward
+            // If pawns first move then it's valid to take 2 squares forward
             if (isFirstMove) {
                 for (int i = 1; i <= initialMove; i++) {
                     int newRow = row + i;
-                    if (Board[newRow][col].getPiece() != null) {
-                        break;
-                    } else if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
-                        vp = new Positions(newRow, col);
-                        validPositions.add(vp);
+                    if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
+                        Square square = Board[newRow][col];
+                        if (square.getPiece() == null) {
+                            vp = new Positions(newRow, col);
+                            validPositions.add(vp);
+                        } else {
+                            break;
+                        }
                     }
-                    this.isFirstMove = false;
                 }
+                this.isFirstMove = false;
             }
             // Else only take 1 square forward
             else {
                 // Valid 1 step forward
                 int newRow = row + forwardMove;
                 // If there is a piece in front ignore that square
-                if (Board[newRow][col].getPiece() == null) {
-                    vp = new Positions(newRow, col);
-                    validPositions.add(vp);
+                if (newRow >= 0 && newRow < 8 && col >= 0 && col < 8) {
+                    Square square = Board[newRow][col];
+                    if (square.getPiece() == null) {
+                        vp = new Positions(newRow, col);
+                        validPositions.add(vp);
+                    }
                 }
 
                 // Check for capturing diagonally left
                 int leftCaptureCol = col - 1;
-                if (leftCaptureCol >= 0 && Board[newRow][leftCaptureCol].getPiece() != null
-                        && Board[newRow][leftCaptureCol].getPiece().isWhite() != isWhite()) {
-                    vp = new Positions(newRow, leftCaptureCol);
-                    validPositions.add(vp);
+                if (leftCaptureCol >= 0 && leftCaptureCol < 8) {
+                    Square square = Board[newRow][leftCaptureCol];
+                    if (square.getPiece() != null && square.getPiece().isWhite() != isWhite()) {
+                        vp = new Positions(newRow, leftCaptureCol);
+                        validPositions.add(vp);
+                    }
                 }
 
                 // Check for capturing diagonally right
                 int rightCaptureCol = col + 1;
-                if (rightCaptureCol < 8 && Board[newRow][rightCaptureCol].getPiece() != null
-                        && Board[newRow][rightCaptureCol].getPiece().isWhite() != isWhite()) {
-                    vp = new Positions(newRow, rightCaptureCol);
-                    validPositions.add(vp);
+                if (rightCaptureCol < 8 && rightCaptureCol >= 0) {
+                    Square square = Board[newRow][rightCaptureCol];
+                    if (square.getPiece() != null && square.getPiece().isWhite() != isWhite()) {
+                        vp = new Positions(newRow, rightCaptureCol);
+                        validPositions.add(vp);
+                    }
                 }
             }
         }
