@@ -3,7 +3,8 @@ package com.example.chessgame;
 import java.util.ArrayList;
 
 public class King extends Piece{
-    public King(boolean isWhite, int imageResourceId) {
+    boolean isFirstMove = true;
+    public King(boolean isWhite, int imageResourceId, boolean isFirstMove) {
         super(isWhite, imageResourceId);
     }
 
