@@ -13,7 +13,18 @@ import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Base64;
-
+// Working On:
+// En Passant Rule -
+// Castling Rule - Must be the first move for Rook and King pieces
+// Checkmate rules - If moving a piece cannot result in your king to be checked
+//                 - If king is checked the king needs to uncheck or a piece has to hide king to uncheck
+//                 - If no moves can be made to uncheck king then opponent wins
+// Pawning Rule - If pawn reaches opposite side of board the pawn can become a Queen, Bishop, Rook, or Knight.
+// Count Down timer - A limit of 10 minutes per player, time is added after every move
+// Move counter - How many moves does it take to win
+// Player Names
+// Current Issues:
+// checkOpponentAttack - This function is not highlighting the square of attacking pieces
 public class StartGame extends AppCompatActivity implements View.OnClickListener {
     VideoView videoView;
     String kingVideoPath;
@@ -59,7 +70,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
         // Initialize pieces as a chess board
         Piece[][] pieces = {
                 // Black pieces
-                {new Rook(false, R.drawable.skulls_rook_black), new Knight(false, R.drawable.skulls_knight_black), new Bishop(false, R.drawable.skulls_bishop_black), new Queen(false, R.drawable.skulls_queen_black), new King(false, R.drawable.skulls_king_black), new Bishop(false, R.drawable.skulls_bishop_black), new Knight(false, R.drawable.skulls_knight_black), new Rook(false, R.drawable.skulls_rook_black)},
+                {new Rook(false, R.drawable.skulls_rook_black, true), new Knight(false, R.drawable.skulls_knight_black), new Bishop(false, R.drawable.skulls_bishop_black), new Queen(false, R.drawable.skulls_queen_black), new King(false, R.drawable.skulls_king_black, true), new Bishop(false, R.drawable.skulls_bishop_black), new Knight(false, R.drawable.skulls_knight_black), new Rook(false, R.drawable.skulls_rook_black, true)},
                 {new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true), new Pawn(false, R.drawable.skulls_pawn_black, true)},
                 // empty squares
                 {null, null, null, null, null, null, null, null},
@@ -68,7 +79,7 @@ public class StartGame extends AppCompatActivity implements View.OnClickListener
                 {null, null, null, null, null, null, null, null},
                 // White pieces
                 {new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true), new Pawn(true, R.drawable.skulls_pawn_white, true)},
-                {new Rook(true, R.drawable.skulls_rook_white), new Knight(true, R.drawable.skulls_knight_white), new Bishop(true, R.drawable.skulls_bishop_white), new Queen(true, R.drawable.skulls_queen_white), new King(true, R.drawable.skulls_king_white), new Bishop(true, R.drawable.skulls_bishop_white), new Knight(true, R.drawable.skulls_knight_white), new Rook(true, R.drawable.skulls_rook_white)}
+                {new Rook(true, R.drawable.skulls_rook_white, true), new Knight(true, R.drawable.skulls_knight_white), new Bishop(true, R.drawable.skulls_bishop_white), new Queen(true, R.drawable.skulls_queen_white), new King(true, R.drawable.skulls_king_white, true), new Bishop(true, R.drawable.skulls_bishop_white), new Knight(true, R.drawable.skulls_knight_white), new Rook(true, R.drawable.skulls_rook_white, true)}
         };
 
         // Initialize all square pieces on boards
