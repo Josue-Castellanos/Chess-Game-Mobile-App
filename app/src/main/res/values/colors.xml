@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="clear">#00000000</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="validSquareColor">#8dff0004</color>
-    <color name="kingCheckedColor">#8DF7FF00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="kingCheckedColor">#8dff0004</color>
+    <color name="validSquareColor">#8DF7FF00</color>
     <color name="attackingSquareColor">#795e45e6</color>
     <color name="rc00">#FFFFFF</color>
     <color name="rc02">#FFFFFF</color>
