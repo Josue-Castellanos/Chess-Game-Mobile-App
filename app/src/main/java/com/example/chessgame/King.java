@@ -31,10 +31,6 @@ public class King extends Piece{
                     vp = new Positions(newRow, newCol);
                     validPositions.add(vp);
                 }
-                // Break out of the loop if the square is not empty
-                if (!newSquare.isEmpty()) {
-                    break;
-                }
             }
         }
         return validPositions;
