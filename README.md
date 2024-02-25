@@ -1,4 +1,4 @@
 
 
 
-![8gynkw](https://github.com/Josue-Castellanos/Chess-Game-Mobile-App/assets/98190733/b75b9c9f-084e-492d-9cc9-de7bec91d524)
+![8gyp06 (2)](https://github.com/Josue-Castellanos/Chess-Game-Mobile-App/assets/98190733/56009fa6-f411-4ebd-ad7e-cc51fdb93c8e)
